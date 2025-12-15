@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>HRS Website</title>
+  <title>Human Resource Support</title>
 
   <!-- Meta -->
   <meta charset="UTF-8">
@@ -13,13 +13,16 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 
-  <!-- Font Awesome Icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <!-- Custom Styles -->
   <style>
-    body, h1, h2, h3, h4, h5, h6 {
+    body, h1,h2,h3,h4,h5,h6 {
       font-family: "Montserrat", sans-serif;
+    }
+
+    body {
+      background: #000;
     }
 
     /* Sidebar */
@@ -28,13 +31,225 @@
       background: #222;
     }
 
-    /* Page content */
+    /* Main content */
     #main {
       margin-left: 120px;
+      padding-top: 64px;
     }
 
-    /* Mobile view */
     @media only screen and (max-width: 600px) {
+      #main {
+        margin-left: 0;
+        padding-top: 64px;
+      }
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="w3-black">
+
+<!-- Mobile Top Navbar -->
+<div class="w3-top w3-hide-large w3-hide-medium">
+  <div class="w3-bar w3-black w3-card">
+    <span class="w3-bar-item w3-padding-large">HRS</span>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-padding-large"
+       onclick="toggleMobileMenu()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu"
+     class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium">
+  <a href="#" class="w3-bar-item w3-button" onclick="toggleMobileMenu()">Home</a>
+  <a href="#about" class="w3-bar-item w3-button" onclick="toggleMobileMenu()">About</a>
+  <a href="#jobs" class="w3-bar-item w3-button" onclick="toggleMobileMenu()">Jobs</a>
+  <a href="#shop" class="w3-bar-item w3-button" onclick="toggleMobileMenu()">Shop</a>
+  <a href="#contact" class="w3-bar-item w3-button" onclick="toggleMobileMenu()">Contact</a>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-center w3-hide-small">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>ABOUT</p>
+  </a>
+  <a href="#jobs" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-briefcase w3-xxlarge"></i>
+    <p>JOBS</p>
+  </a>
+  <a href="#shop" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-shopping-bag w3-xxlarge"></i>
+    <p>SHOP</p>
+  </a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>CONTACT</p>
+  </a>
+</nav>
+
+<!-- MAIN -->
+<div id="main">
+
+  <!-- Header -->
+  <header class="w3-container w3-center w3-padding-64 fade-in">
+    <h1 class="w3-jumbo">Human Resource Support</h1>
+    <p>Careers • Influencers • Fashion</p>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="w3-content w3-padding-64 fade-in">
+    <h2 class="w3-text-light-grey">About</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p class="w3-text-grey">
+      Human Resource Support connects influencers, job seekers,
+      and sustainable fashion under one platform.
+    </p>
+  </section>
+
+  <!-- Jobs -->
+  <section id="jobs" class="w3-content w3-padding-64">
+    <h2 class="w3-text-light-grey">Job Openings</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-card w3-dark-grey w3-padding w3-margin-bottom fade-in">
+      <h3>Instagram Influencer – Fashion</h3>
+      <p>Location: Kalimpong</p>
+    </div>
+
+    <div class="w3-card w3-dark-grey w3-padding w3-margin-bottom fade-in">
+      <h3>Social Media Manager</h3>
+      <p>Location: Darjeeling</p>
+    </div>
+  </section>
+
+  <!-- Shop -->
+  <section id="shop" class="w3-content w3-padding-64">
+    <h2 class="w3-text-light-grey">Shop</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-card w3-dark-grey fade-in">
+      <img id="product-main-1"
+           src="https://i.ibb.co/pB1ZxrtD/Drive-logic-hrs-cloth.jpg"
+           style="width:100%;cursor:pointer"
+           onclick="openImage(this.src)">
+      <div class="w3-container">
+        <h3>UNIT 09 // CRUISE CTRL Tee</h3>
+        <p>₹999</p>
+        <a href="#order"
+           class="w3-button w3-white"
+           onclick="setProductWithPrice('UNIT 09 // CRUISE CTRL Tee',999)">
+          Buy Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order -->
+  <section id="order" class="w3-content w3-padding-64">
+    <h2 class="w3-text-light-grey">Place Order</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div id="successMessage"
+         class="w3-panel w3-green w3-round"
+         style="display:none">
+      ✅ Your order details are ready. Please send the email.
+    </div>
+
+    <form onsubmit="showSuccessMessage()"
+          action="mailto:hrs.team.a@gmail.com"
+          method="POST"
+          enctype="text/plain"
+          class="w3-dark-grey w3-padding w3-card fade-in">
+
+      <select id="orderProduct" class="w3-select w3-black" name="Product" required>
+        <option value="" disabled selected>Select product</option>
+        <option>UNIT 09 // CRUISE CTRL Tee</option>
+      </select>
+
+      <input id="orderPrice" class="w3-input w3-black" name="Price" readonly>
+      <input id="orderTotal" class="w3-input w3-black" readonly>
+
+      <select class="w3-select w3-black" name="Size" required>
+        <option value="" disabled selected>Select size</option>
+        <option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+
+      <input class="w3-input w3-black" name="Name" placeholder="Full Name" required>
+      <input class="w3-input w3-black" name="Phone" placeholder="Phone" required>
+
+      <button class="w3-button w3-white w3-margin-top">SEND ORDER</button>
+    </form>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="w3-content w3-padding-64 fade-in">
+    <h2 class="w3-text-light-grey">Contact</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>Email: hrs.team.a@gmail.com</p>
+  </section>
+
+</div>
+
+<!-- Image Modal -->
+<div id="imgModal" class="w3-modal" onclick="this.style.display='none'">
+  <div class="w3-modal-content w3-black">
+    <img id="modalImg" style="width:100%">
+  </div>
+</div>
+
+<script>
+  function toggleMobileMenu() {
+    document.getElementById("mobileMenu").classList.toggle("w3-hide");
+  }
+
+  function openImage(src) {
+    document.getElementById("modalImg").src = src;
+    document.getElementById("imgModal").style.display = "block";
+  }
+
+  function setProductWithPrice(name, price) {
+    document.getElementById("orderProduct").value = name;
+    document.getElementById("orderPrice").value = price;
+    document.getElementById("orderTotal").value = "₹" + price;
+  }
+
+  function showSuccessMessage() {
+    document.getElementById("successMessage").style.display = "block";
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".fade-in").forEach(el => {
+      new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      }).observe(el);
+    });
+  });
+</script>
+
+</body>
+    </html>    @media only screen and (max-width: 600px) {
       #main {
         margin-left: 0;
       }
