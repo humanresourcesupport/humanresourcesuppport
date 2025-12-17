@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Human Resource Support | Creators, Jobs & Fashion</title>
+    <title>Human Resource Support | Careers, Influencers & Fashion</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
+    <meta name="description" content="Human Resource Support (HRS) is a digital ecosystem bridging the gap between creative talent and industry opportunities. Influencer marketing, creative jobs, and sustainable fashion.">
+    <meta name="keywords" content="Human Resource Support, HRS, influencer marketing India, creative jobs, sustainable fashion, UNIT series, hrsdesign">
+    <meta name="author" content="hrsdesign">
     <meta property="og:title" content="Human Resource Support | Creators, Jobs & Fashion">
-    <meta property="og:description" content="The digital ecosystem bridging the gap between creative talent and industry opportunities.">
-    <meta property="og:image" content="https://app.trickle.so/storage/public/images/usr_170c62a758000001/f4be4033-d379-466f-8e24-389532ab9dda.png">
-    <link rel="icon" type="image/png" href="https://app.trickle.so/storage/public/images/usr_170c62a758000001/f4be4033-d379-466f-8e24-389532ab9dda.png">
+    <meta property="og:description" content="Digital ecosystem for the modern creator economy.">
+    <meta property="og:image" content="https://i.ibb.co/m5T2S9qf/IMG-20251213-023435-399.webp">
+    <link rel="icon" type="image/png" href="https://i.ibb.co/m5T2S9qf/IMG-20251213-023435-399.webp">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Human Resource Support",
+      "url": "https://humanresourcesupport.github.io/Jobs/",
+      "logo": "https://i.ibb.co/m5T2S9qf/IMG-20251213-023435-399.webp",
+      "description": "A platform for influencer marketing, digital recruitment, and sustainable fashion."
+    }
+    </script>
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
@@ -33,6 +47,23 @@
         .btn-premium:hover { background: #fff; color: #000; }
         input, select, textarea { width: 100%; padding: 12px; margin-bottom: 15px; background: #111; border: 1px solid #333; color: #fff; }
         
+        /* LOGO ANIMATION */
+        .logo-container { display: flex; justify-content: center; padding: 40px 0 20px 0; }
+        .logo-circle {
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            animation: pulseGlow 3s infinite ease-in-out;
+            background: #000;
+        }
+        .logo-circle img { width: 100%; height: 100%; object-fit: cover; }
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1); }
+            50% { box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.2); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1); }
+        }
+
         /* Animations */
         .fade-in { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
         .fade-in.show { opacity: 1; transform: translateY(0); }
@@ -59,9 +90,16 @@
 </div>
 
 <div id="main">
-  <header class="w3-container w3-padding-64 w3-center fade-in" id="home">
-    <h1 class="w3-jumbo">Human Resource Support</h1>
-    <p class="w3-large">Careers • Influencers • Fashion</p>
+
+  <div class="logo-container fade-in">
+    <div class="logo-circle">
+      <img src="https://i.ibb.co/m5T2S9qf/IMG-20251213-023435-399.webp" alt="Human Resource Support Logo">
+    </div>
+  </div>
+
+  <header class="w3-container w3-padding-32 w3-center fade-in" id="home">
+    <h1 class="w3-jumbo" style="font-weight:900; letter-spacing:5px;">Human Resource Support</h1>
+    <p class="w3-large w3-text-grey">CAREERS • INFLUENCERS • FASHION</p>
     <div class="w3-padding-32">
         <a href="#shop" class="btn-premium">Shop UNIT 09</a>
     </div>
@@ -69,20 +107,20 @@
 
   <section id="about" class="w3-padding-64 w3-content fade-in">
     <div class="w3-center">
-        <h2 class="w3-xxlarge" style="letter-spacing: 8px;">ABOUT HRS</h2>
+        <h2 class="w3-xxlarge" style="letter-spacing: 8px;">THE ECOSYSTEM</h2>
         <hr style="width:100px; border: 2px solid #fff; margin: 20px auto;">
     </div>
     <div class="w3-row-padding">
         <div class="w3-half w3-padding">
-            <div class="glass-card">
-                <h3>The Mission</h3>
-                <p>Human Resource Support (HRS) is a multi-dimensional platform bridging the gap between creative talent and industry opportunities.</p>
+            <div class="glass-card" style="min-height:250px;">
+                <h3 class="w3-text-white">Our Mission</h3>
+                <p>Human Resource Support (HRS) is a multi-dimensional platform bridging the gap between talent and industry standards. We provide the infrastructure creators need to find meaningful work.</p>
             </div>
         </div>
         <div class="w3-half w3-padding">
-            <div class="glass-card">
-                <h3>The Vision</h3>
-                <p>Providing the infrastructure creators need to find meaningful work and for brands to find authentic voices.</p>
+            <div class="glass-card" style="min-height:250px;">
+                <h3 class="w3-text-white">What We Do</h3>
+                <p>From influencer marketing to digital recruitment and our signature UNIT fashion drops, we support the modern digital economy with zero bureaucracy and agile operations.</p>
             </div>
         </div>
     </div>
@@ -90,9 +128,9 @@
 
   <section id="partnerships" class="w3-padding-64 w3-content fade-in">
     <h2 class="w3-text-white w3-center">FOR BRANDS</h2>
-    <div class="glass-card w3-margin-top">
-        <p>Scale your impact. We connect brands with vetted fashion & tech influencers to drive authentic engagement.</p>
-        <a href="mailto:hrs.team.a@gmail.com?subject=Brand Inquiry" class="btn-premium">Partner With Us</a>
+    <div class="glass-card w3-margin-top w3-center">
+        <p>Scale your impact. We connect brands with vetted fashion & tech influencers to drive authentic engagement. Our network is curated for quality and creative reach.</p>
+        <a href="mailto:hrs.team.a@gmail.com?subject=Brand Inquiry" class="btn-premium w3-margin-top">Partner With Us</a>
     </div>
   </section>
 
@@ -102,6 +140,11 @@
         <form action="mailto:hrs.team.a@gmail.com" method="post" enctype="text/plain">
             <input type="text" name="Handle" placeholder="Instagram Handle (@)" required>
             <input type="number" name="Followers" placeholder="Follower Count" required>
+            <select name="Niche" style="width:100%; padding:12px; background:#111; color:#fff; border:1px solid #333; margin-bottom:15px;">
+                <option value="Fashion">Fashion</option>
+                <option value="Tech">Tech</option>
+                <option value="Lifestyle">Lifestyle</option>
+            </select>
             <button type="submit" class="btn-premium w3-block">Join Creator Network</button>
         </form>
     </div>
@@ -112,7 +155,7 @@
     <div class="w3-row-padding">
         <div class="w3-half w3-margin-bottom">
             <div class="glass-card w3-padding-0">
-                <div class="img-container"><img src="https://i.ibb.co/pB1ZxrtD/Drive-logic-hrs-cloth.jpg" style="width:100%"></div>
+                <div class="img-container"><img src="https://i.ibb.co/pB1ZxrtD/Drive-logic-hrs-cloth.jpg" alt="UNIT 09 Tee" style="width:100%"></div>
                 <div class="w3-container w3-padding">
                     <h4>UNIT 09 Tee</h4>
                     <p>₹999</p>
@@ -122,7 +165,7 @@
         </div>
         <div class="w3-half">
             <div class="glass-card w3-padding-0">
-                <div class="img-container"><img src="https://i.ibb.co/fVzJsQxw/Summer-wear-hrs.jpg" style="width:100%"></div>
+                <div class="img-container"><img src="https://i.ibb.co/fVzJsQxw/Summer-wear-hrs.jpg" alt="Summer Core Tee" style="width:100%"></div>
                 <div class="w3-container w3-padding">
                     <h4>SUMMER CORE</h4>
                     <p>₹1299</p>
@@ -148,7 +191,7 @@
   <section id="newsletter" class="w3-padding-64 w3-center fade-in">
     <div class="w3-content glass-card">
         <h3>EARLY ACCESS</h3>
-        <p>Subscribe for future UNIT drops.</p>
+        <p>Subscribe for future UNIT drops and job alerts.</p>
         <form action="mailto:hrs.team.a@gmail.com" method="post" enctype="text/plain">
             <input type="email" name="Email" placeholder="Enter Email" style="max-width:400px">
             <br>
@@ -166,7 +209,7 @@
 </div>
 
 <script>
-    // Simple Buy Logic
+    // Buy Logic
     function buyNow(name, price) {
         document.getElementById('prodInput').value = name + " - ₹" + price;
         document.getElementById('order').scrollIntoView();
@@ -174,8 +217,11 @@
 
     // Scroll Animations
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
-    });
+        entries.forEach(entry => { 
+            if (entry.isIntersecting) entry.target.classList.add('show'); 
+        });
+    }, { threshold: 0.1 });
+
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 
