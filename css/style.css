@@ -1,145 +1,139 @@
-/* =====================================================
-   GLOBAL RESET & BASE
-===================================================== */
+/* --- hrsdesign Premium CSS Framework --- */
+
+/* 1. Reset & Variables */
+:root {
+  --primary-black: #0a0a0a;
+  --secondary-black: #121212;
+  --accent-white: #ffffff;
+  --text-grey: #a0a0a0;
+  --glass: rgba(255, 255, 255, 0.05);
+  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
 * {
   box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background-color: #000;
-  color: #f1f1f1;
-  margin: 0;
+  background-color: var(--primary-black);
+  color: var(--accent-white);
+  font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* =====================================================
-   TYPOGRAPHY
-===================================================== */
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  color: #ffffff;
+/* 2. Professional Sidebar */
+.sidebar {
+  width: 100px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: var(--secondary-black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  z-index: 1000;
 }
 
-p, li {
-  font-size: 16px;
-  color: #cccccc;
+@media (max-width: 768px) {
+  .sidebar { width: 100%; height: auto; position: relative; flex-direction: row; justify-content: space-around; padding: 15px 0; }
 }
 
-a {
-  color: #ffffff;
+/* 3. Typography */
+h1, h2, h3 {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 700;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #fff, #444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 4. Glassmorphism Cards (For Jobs/Shop) */
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  transition: var(--transition);
+  margin-bottom: 20px;
+}
+
+.glass-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent-white);
+}
+
+/* 5. Buttons (Minimalist Style) */
+.btn-premium {
+  padding: 12px 35px;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-block;
   text-decoration: none;
 }
 
-a:hover {
-  opacity: 0.85;
+.btn-premium:hover {
+  background: white;
+  color: black;
 }
 
-/* =====================================================
-   LAYOUT
-===================================================== */
-
-header img {
-  display: block;
-  margin: 0 auto 16px;
+/* 6. Form Styling */
+input, select, textarea {
+  width: 100%;
+  padding: 15px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: white;
+  margin-bottom: 15px;
+  font-family: inherit;
 }
 
-header h1 {
-  font-size: 42px;
-  margin-bottom: 8px;
+input:focus {
+  outline: none;
+  border-color: var(--accent-white);
 }
 
-header p {
-  font-size: 18px;
-  color: #aaaaaa;
+/* 7. Image Hover Effect */
+.img-container {
+  overflow: hidden;
+  border-radius: 10px;
 }
 
-/* =====================================================
-   SECTIONS
-===================================================== */
-
-section {
-  margin-bottom: 64px;
+.img-container img {
+  width: 100%;
+  transition: var(--transition);
 }
 
-section h2 {
-  font-size: 28px;
-  margin-bottom: 16px;
-  border-bottom: 2px solid #444;
-  display: inline-block;
-  padding-bottom: 6px;
+.img-container:hover img {
+  transform: scale(1.05);
+  filter: grayscale(100%);
 }
 
-section ul {
-  padding-left: 20px;
+/* 8. Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
-section ul li {
-  margin-bottom: 10px;
-}
-
-/* =====================================================
-   BUTTONS
-===================================================== */
-
-.w3-button {
-  border-radius: 4px;
-  transition: background-color 0.3s ease,
-              color 0.3s ease,
-              transform 0.2s ease;
-}
-
-.w3-button:hover {
-  transform: translateY(-2px);
-}
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer {
-  border-top: 1px solid #222;
-  margin-top: 64px;
-  font-size: 14px;
-  color: #888;
-}
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 32px;
-  }
-
-  section h2 {
-    font-size: 24px;
-  }
-
-  p, li {
-    font-size: 15px;
-  }
-}
-
-/* =====================================================
-   SEO / UX HELPERS
-===================================================== */
-
-/* Improve readability for long content */
-main {
-  max-width: 1000px;
-}
-
-/* Accessible focus styles */
-a:focus,
-button:focus {
-  outline: 2px solid #ffffff;
-  outline-offset: 3px;
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
